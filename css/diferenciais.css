@@ -1,0 +1,170 @@
+/* ===== SEÇÃO DIFERENCIAIS ===== */
+
+.diferenciais-section {
+  background: var(--branco-neve);
+  position: relative;
+}
+
+.diferenciais-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, var(--azul-gelo) 50%, transparent 51%);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.diferenciais-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.diferencial-card {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-xl);
+  text-align: center;
+  height: 100%;
+  transition: var(--transition-normal);
+  border: 1px solid var(--cinza-claro);
+  position: relative;
+  overflow: hidden;
+}
+
+.diferencial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradiente-azul);
+  opacity: 0;
+  transition: var(--transition-slow);
+  z-index: 1;
+}
+
+.diferencial-card:hover::before {
+  left: 0;
+  opacity: 0.05;
+}
+
+.diferencial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--azul-principal);
+}
+
+.diferencial-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.diferencial-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradiente-azul);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  transition: var(--transition-normal);
+}
+
+.diferencial-card:hover .diferencial-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-lg);
+}
+
+.diferencial-icon i {
+  font-size: var(--font-3xl);
+  color: white;
+}
+
+.diferencial-card h4 {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+  color: var(--preto-profundo);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition-fast);
+}
+
+.diferencial-card:hover h4 {
+  color: var(--azul-principal);
+}
+
+.diferencial-card p {
+  color: var(--preto-profundo);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: var(--font-base);
+}
+
+/* Efeito de entrada escalonada */
+.diferencial-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.diferencial-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.diferencial-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.diferencial-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsividade dos Diferenciais */
+@media (max-width: 992px) {
+  .diferencial-card {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .diferencial-card {
+    padding: var(--spacing-xl);
+  }
+  
+  .diferencial-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .diferencial-icon i {
+    font-size: var(--font-2xl);
+  }
+  
+  .diferencial-card h4 {
+    font-size: var(--font-lg);
+  }
+  
+  .diferencial-card p {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .diferencial-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .diferencial-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .diferencial-icon i {
+    font-size: var(--font-xl);
+  }
+}
+

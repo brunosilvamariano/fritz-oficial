@@ -1,0 +1,248 @@
+/* ===== SEÇÃO PROCESSOS ===== */
+
+.processos-section {
+  background: linear-gradient(135deg, var(--azul-gelo) 0%, var(--branco-neve) 100%);
+  position: relative;
+}
+
+.processos-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23538BE1" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  z-index: 1;
+}
+
+.processos-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.processo-card {
+  background: white;
+  padding: var(--spacing-2xl);
+  border-radius: var(--border-radius-xl);
+  text-align: center;
+  height: 100%;
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.processo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradiente-azul);
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: 1;
+}
+
+.processo-card:hover::before {
+  opacity: 0.05;
+}
+
+.processo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--azul-principal);
+}
+
+.processo-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.processo-number {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--gradiente-azul);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--font-lg);
+  box-shadow: var(--shadow-md);
+  border: 3px solid white;
+  z-index: 3;
+}
+
+.processo-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--azul-claro), var(--azul-pastel));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-xl) auto var(--spacing-lg);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.processo-icon::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: var(--gradiente-azul);
+  border-radius: 50%;
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: -1;
+}
+
+.processo-card:hover .processo-icon::before {
+  opacity: 0.3;
+}
+
+.processo-card:hover .processo-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.processo-icon i {
+  font-size: var(--font-3xl);
+  color: var(--azul-principal);
+  transition: var(--transition-fast);
+}
+
+.processo-card:hover .processo-icon i {
+  color: white;
+  transform: scale(1.1);
+}
+
+.processo-card h4 {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+  color: var(--preto-profundo);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition-fast);
+}
+
+.processo-card:hover h4 {
+  color: var(--azul-principal);
+}
+
+.processo-card p {
+  color: var(--preto-profundo);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: var(--font-base);
+}
+
+/* Conectores entre os processos */
+.processo-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 60px;
+  height: 2px;
+  background: var(--gradiente-azul);
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.processo-card:last-child::after {
+  display: none;
+}
+
+/* Animação de entrada escalonada */
+.processo-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.processo-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.processo-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.processo-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsividade dos Processos */
+@media (max-width: 992px) {
+  .processo-card::after {
+    display: none;
+  }
+  
+  .processo-card {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .processo-card {
+    padding: var(--spacing-xl);
+  }
+  
+  .processo-number {
+    width: 35px;
+    height: 35px;
+    font-size: var(--font-base);
+    top: 10px;
+  }
+  
+  .processo-icon {
+    width: 60px;
+    height: 60px;
+    margin: var(--spacing-lg) auto var(--spacing-md);
+  }
+  
+  .processo-icon i {
+    font-size: var(--font-2xl);
+  }
+  
+  .processo-card h4 {
+    font-size: var(--font-lg);
+  }
+  
+  .processo-card p {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .processo-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .processo-number {
+    width: 30px;
+    height: 30px;
+    font-size: var(--font-sm);
+    top: 8px;
+  }
+  
+  .processo-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .processo-icon i {
+    font-size: var(--font-xl);
+  }
+}
+

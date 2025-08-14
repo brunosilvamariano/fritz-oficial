@@ -1,0 +1,273 @@
+/* ===== SEÇÃO CALCULADORA ===== */
+
+.calculadora-section {
+  background: linear-gradient(135deg, var(--azul-gelo) 0%, var(--branco-neve) 50%, var(--azul-gelo) 100%);
+  position: relative;
+}
+
+.calculadora-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="calc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23538BE1" stop-opacity="0.1"/><stop offset="100%" stop-color="%23A4D5F8" stop-opacity="0.05"/></linearGradient></defs><circle cx="50" cy="50" r="30" fill="url(%23calc-grad)"/><circle cx="150" cy="150" r="40" fill="url(%23calc-grad)"/><circle cx="150" cy="50" r="25" fill="url(%23calc-grad)"/><circle cx="50" cy="150" r="35" fill="url(%23calc-grad)"/></svg>');
+  background-size: 400px 400px;
+  animation: float 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+.calculadora-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.calculadora-card {
+  background: white;
+  padding: var(--spacing-3xl);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--cinza-claro);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculadora-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradiente-azul);
+  z-index: 1;
+}
+
+.calculadora-card form {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilização dos campos do formulário */
+.form-label {
+  font-weight: var(--font-semibold);
+  color: var(--preto-profundo);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-base);
+}
+
+.form-select,
+.form-control {
+  border: 2px solid var(--cinza-claro);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  font-size: var(--font-base);
+  transition: var(--transition-normal);
+  background: var(--branco-neve);
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 0.2rem rgba(83, 139, 225, 0.25);
+  outline: none;
+  background: white;
+}
+
+.form-select:hover,
+.form-control:hover {
+  border-color: var(--azul-secundario);
+}
+
+/* Botão de calcular personalizado */
+.calculadora-card .btn-primary {
+  background: var(--gradiente-azul);
+  border: none;
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculadora-card .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: var(--transition-normal);
+}
+
+.calculadora-card .btn-primary:hover::before {
+  left: 100%;
+}
+
+.calculadora-card .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Resultado do orçamento */
+.resultado-orcamento {
+  margin-top: var(--spacing-xl);
+  animation: slideInUp 0.5s ease-out;
+}
+
+.resultado-orcamento .alert {
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border-left: 4px solid var(--verde-sucesso);
+  position: relative;
+  overflow: hidden;
+}
+
+.resultado-orcamento .alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%2328a745" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="%2328a745" opacity="0.1"/><circle cx="30" cy="70" r="1" fill="%2328a745" opacity="0.1"/><circle cx="70" cy="80" r="2.5" fill="%2328a745" opacity="0.1"/></svg>');
+  background-size: 50px 50px;
+  z-index: 1;
+}
+
+.resultado-orcamento .alert > * {
+  position: relative;
+  z-index: 2;
+}
+
+.resultado-orcamento h4 {
+  color: var(--verde-sucesso);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.resultado-orcamento h4 i {
+  font-size: var(--font-xl);
+}
+
+#valorEstimado {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-extrabold);
+  color: var(--verde-sucesso);
+}
+
+.resultado-orcamento .btn-success {
+  background: var(--verde-sucesso);
+  border: none;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  font-weight: var(--font-semibold);
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.resultado-orcamento .btn-success:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resultado-orcamento .btn-success i {
+  font-size: var(--font-lg);
+  animation: var(--animation-pulse);
+}
+
+/* Ícones nos campos */
+.form-group {
+  position: relative;
+}
+
+.form-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: var(--spacing-md);
+  width: 20px;
+  height: 20px;
+  background: var(--azul-principal);
+  opacity: 0.1;
+  border-radius: 50%;
+  transform: translateY(50%);
+  z-index: 1;
+}
+
+/* Animação de loading no botão */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsividade da Calculadora */
+@media (max-width: 768px) {
+  .calculadora-card {
+    padding: var(--spacing-2xl);
+  }
+  
+  .form-select,
+  .form-control {
+    padding: var(--spacing-sm);
+    font-size: var(--font-sm);
+  }
+  
+  .calculadora-card .btn-primary {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-base);
+  }
+  
+  #valorEstimado {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .calculadora-card {
+    padding: var(--spacing-xl);
+  }
+  
+  .form-label {
+    font-size: var(--font-sm);
+  }
+  
+  .resultado-orcamento .alert {
+    padding: var(--spacing-lg);
+  }
+  
+  .resultado-orcamento h4 {
+    font-size: var(--font-lg);
+  }
+  
+  #valorEstimado {
+    font-size: var(--font-lg);
+  }
+}
+
