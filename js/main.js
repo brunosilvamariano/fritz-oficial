@@ -128,10 +128,10 @@ function initCalculadora() {
     
     // Preços base dos serviços
     const precos = {
-        sofa: 80,
-        cadeira: 40,
-        colchao: 100,
-        poltrona: 60
+        sofa: 230,
+        cadeira: 30,
+        colchao: 150,
+        poltrona: 80
     };
     
     // Multiplicadores
