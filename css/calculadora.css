@@ -1,4 +1,4 @@
-/* ===== SEÇÃO CALCULADORA ===== */
+/* ===== SEÇÃO CALCULADORA 
 
 .calculadora-section {
   background: linear-gradient(135deg, var(--azul-gelo) 0%, var(--branco-neve) 50%, var(--azul-gelo) 100%);
@@ -49,7 +49,7 @@
   z-index: 2;
 }
 
-/* Estilização dos campos do formulário */
+/* Estilização dos campos do formulário 
 .form-label {
   font-weight: var(--font-semibold);
   color: var(--preto-profundo);
@@ -80,7 +80,7 @@
   border-color: var(--azul-secundario);
 }
 
-/* Botão de calcular personalizado */
+/* Botão de calcular personalizado 
 .calculadora-card .btn-primary {
   background: var(--gradiente-azul);
   border: none;
@@ -113,7 +113,7 @@
   box-shadow: var(--shadow-xl);
 }
 
-/* Resultado do orçamento */
+/* Resultado do orçamento 
 .resultado-orcamento {
   margin-top: var(--spacing-xl);
   animation: slideInUp 0.5s ease-out;
@@ -188,7 +188,7 @@
   animation: var(--animation-pulse);
 }
 
-/* Ícones nos campos */
+/* Ícones nos campos 
 .form-group {
   position: relative;
 }
@@ -207,7 +207,7 @@
   z-index: 1;
 }
 
-/* Animação de loading no botão */
+/* Animação de loading no botão 
 .btn-loading {
   position: relative;
   pointer-events: none;
@@ -227,7 +227,7 @@
   animation: spin 1s linear infinite;
 }
 
-/* Responsividade da Calculadora */
+/* Responsividade da Calculadora 
 @media (max-width: 768px) {
   .calculadora-card {
     padding: var(--spacing-2xl);
@@ -271,3 +271,4 @@
   }
 }
 
+===== */
