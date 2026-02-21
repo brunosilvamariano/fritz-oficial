@@ -1985,6 +1985,14 @@ section:nth-child(even) {
         justify-content: center;
         width: 100%;
     }
+
+     .about-text {
+        text-align: start;
+    }
+
+    .section-title{
+        text-align: start;
+    }
 }
 
 
