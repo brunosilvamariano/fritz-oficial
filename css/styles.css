@@ -524,14 +524,13 @@ section:nth-child(even) {
     position: relative;
     width: 100%;
     height: 500px;
-    /*border-radius: 28px 28px 58px 58px;*/
     overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
 }
@@ -833,7 +832,7 @@ section:nth-child(even) {
     .display-5{
         font-size: 2rem;
     }
-    
+
     .benefits-grid-new {
         gap: 1.5rem;
     }
@@ -1173,6 +1172,13 @@ section:nth-child(even) {
     .font-size{
         font-size: 8rem !important;
     }
+     .about-text {
+        text-align: start;
+    }
+
+    .section-title{
+        text-align: start;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1187,6 +1193,14 @@ section:nth-child(even) {
 
     .section-header-modern h2{
         font-size: 2rem;
+    }
+
+    .about-text {
+        text-align: start;
+    }
+
+    .section-title{
+        text-align: start;
     }
 }
 
@@ -1656,6 +1670,14 @@ section:nth-child(even) {
         font-size: 2rem;
     }
 
+     .highlight {
+        font-size: 3rem;
+        color: var(--secondary-gold);
+        max-width: 580px;
+        margin: 0 auto;
+    }
+
+
     .section-header-h2{
         font-size: 2rem;
     }
@@ -1675,6 +1697,8 @@ section:nth-child(even) {
     
     .hero-subtitle {
         font-size: 1rem;
+        max-width: 580px;
+        margin: 0 auto;
     }
     
      .hero-buttons {
@@ -1972,29 +1996,54 @@ section:nth-child(even) {
 @media (max-width: 1024px) {
     .hero-section {
         height: auto;
-        min-height: 100vh;
-        padding: 3rem 0;
+        min-height: auto;
+        padding: 6rem 0 3rem;
+        margin-top: 80px;
+    }
+
+    .hero-section .row {
+        flex-direction: column;
     }
 
     .hero-text-column {
-        padding-right: 1rem;
-        padding-bottom: 2rem;
+        padding-right: 0;
+        padding-bottom: 3rem;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .hero-text-content {
-        text-align: left;
+        text-align: center;
+    }
+
+    .hero-label {
+        margin: 0 auto 1.5rem;
     }
 
     .hero-title {
         font-size: 3.5rem;
+        text-align: center;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image-column {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
     }
 
     .hero-image-container {
-        height: 400px;
+        height: 450px;
     }
 }
 
@@ -2022,7 +2071,7 @@ section:nth-child(even) {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
         text-align: center;
     }
 
@@ -2039,6 +2088,7 @@ section:nth-child(even) {
     .hero-image-container {
         height: 350px;
     }
+
 }
 
 /* Celulares (até 576px) */
@@ -2069,10 +2119,13 @@ section:nth-child(even) {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
         margin-bottom: 1rem;
-        
+    }
+
+    .highlight{
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
@@ -2095,7 +2148,6 @@ section:nth-child(even) {
         height: 280px;
     }
 }
-
 
 /* ============================================
    SEÇÃO DE DEPOIMENTOS - AJUSTES SUTIS
