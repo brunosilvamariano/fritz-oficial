@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fluxo do Chat
     const flow = {
         start: {
-            text: "Olá! Seja bem-vindo à nossa empresa de Higienização de Estofados. 👋<br><br>Sou seu assistente virtual e vou te ajudar a solicitar um orçamento rápido. O que você deseja higienizar?",
+            text: "Olá! Seja bem-vindos👋<br><br>Sou seu assistente virtual e vou te ajudar a solicitar um orçamento rápido. O que você deseja higienizar?",
             options: [
                 { text: "🛋️ Sofá", next: "sofa" },
                 { text: "🛏️ Colchão", next: "colchao" },
